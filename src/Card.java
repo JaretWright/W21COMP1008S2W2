@@ -16,7 +16,7 @@ public class Card {
      */
     public Card(String faceName, String suit)
     {
-        this.faceName = faceName;
+        setFaceName(faceName);
         setSuit(suit);
     }
 
@@ -25,6 +25,15 @@ public class Card {
     }
 
     public void setFaceName(String faceName) {
+        faceName = faceName.toLowerCase();
+        List<String> faceNames = Arrays.asList("two","three","four","five","six","seven","eight",
+                                   "nine","ten","jack","queen","king","ace");
+
+        if (faceNames.contains(faceName))
+            this.faceName = faceName;
+        else
+            throw new IllegalArgumentException(faceName + " is not valid, use "+faceNames);
+
         this.faceName = faceName;
     }
 

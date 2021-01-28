@@ -55,13 +55,18 @@ public class Card {
         return suit;
     }
 
+    public static List<String> getSuits()
+    {
+        return Arrays.asList("hearts","diamonds","spades","clubs");
+    }
+
     /**
      * This method will validate that the argument is one of "hearts","diamonds","spades","clubs"
      * @param suit
      */
     public void setSuit(String suit) {
         suit = suit.toLowerCase();
-        List<String> validSuits = Arrays.asList("hearts","diamonds","spades","clubs");
+        List<String> validSuits = getSuits();
         if (validSuits.contains(suit))  // this performs a case sensitive comparison
             this.suit = suit;
         else

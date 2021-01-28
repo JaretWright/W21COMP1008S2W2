@@ -47,6 +47,10 @@ public class Card {
         return suit;
     }
 
+    /**
+     * This method will validate that the argument is one of "hearts","diamonds","spades","clubs"
+     * @param suit
+     */
     public void setSuit(String suit) {
         suit = suit.toLowerCase();
         List<String> validSuits = Arrays.asList("hearts","diamonds","spades","clubs");
@@ -55,6 +59,20 @@ public class Card {
         else
             throw new IllegalArgumentException(suit + " is not valid.  Use one of "+validSuits);
     }
+
+    /**
+     * This method will return the String "red" if the card's suit is hearts or diamonds,
+     * "black" otherwise
+     * @return
+     */
+    public String getCardColour()
+    {
+        if (suit.equals("hearts")||suit.equals("diamonds"))
+            return "red";
+        else
+            return "black";
+    }
+
 
     public String toString()
     {

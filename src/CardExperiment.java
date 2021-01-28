@@ -9,7 +9,8 @@ public class CardExperiment {
 
 //        jesseOfMid.setSuit("hearts");  // valid input
 //        jesseOfMid.setSuit("Diamonds");    //invalid input
-        System.out.println(aceOfSpades);
-        System.out.println(jesseOfMid);
+        System.out.printf("%s is a %s card%n",aceOfSpades, aceOfSpades.getCardColour());
+        System.out.printf("%s is a %s card%n",jesseOfMid, jesseOfMid.getCardColour());
+
     }
 }

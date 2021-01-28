@@ -24,6 +24,12 @@ public class Card {
         return faceName;
     }
 
+    /**
+     * This method will validate that the argument is in the collection of
+     * "two","three","four","five","six","seven","eight","nine","ten","jack","queen",
+     * "king","ace" and set the instance variable
+     * @param faceName - this is a String to represent the name of the card
+     */
     public void setFaceName(String faceName) {
         faceName = faceName.toLowerCase();
         List<String> faceNames = Arrays.asList("two","three","four","five","six","seven","eight",

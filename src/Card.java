@@ -25,6 +25,15 @@ public class Card {
     }
 
     /**
+     * This returns a list of valid face names in lower case
+     * @return
+     */
+    public static List<String> getFaceNames(){
+        return Arrays.asList("two","three","four","five","six","seven","eight",
+                "nine","ten","jack","queen","king","ace");
+    }
+
+    /**
      * This method will validate that the argument is in the collection of
      * "two","three","four","five","six","seven","eight","nine","ten","jack","queen",
      * "king","ace" and set the instance variable
@@ -32,8 +41,7 @@ public class Card {
      */
     public void setFaceName(String faceName) {
         faceName = faceName.toLowerCase();
-        List<String> faceNames = Arrays.asList("two","three","four","five","six","seven","eight",
-                                   "nine","ten","jack","queen","king","ace");
+        List<String> faceNames = getFaceNames();
 
         if (faceNames.contains(faceName))
             this.faceName = faceName;
@@ -67,12 +75,23 @@ public class Card {
      */
     public String getCardColour()
     {
-        if (suit.equals("hearts")||suit.equals("diamonds"))
+        if (suit.equalsIgnoreCase("hearts")||suit.equals("diamonds"))
             return "red";
         else
             return "black";
     }
 
+    /**
+     * This method will return the value of the card.  2 = 2, 3=3...9=9, 10=10, jack = 11
+     * queen = 12, king = 13, ace = 14
+     * @return
+     */
+     public int getFaceValue()
+     {
+         //the first face name in the list (position 0) is "two".  So we add 2 to the
+         //index (or position) of each card
+        return getFaceNames().indexOf(faceName) + 2;
+     }
 
     public String toString()
     {
